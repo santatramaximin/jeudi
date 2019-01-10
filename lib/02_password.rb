@@ -25,7 +25,7 @@
 
 	#welcome_screen
 	def welcome_screen
-		puts "Welcome, you're now allowed to access our informations \n you'll find all informations about the suspect here https://github.com/PlinXXX/Jeudi "
+		puts "Welcome,! "
 	end
 	
 	
