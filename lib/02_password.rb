@@ -1,30 +1,36 @@
-def singup
-	puts"Entrer votre mots de passe"
-	print">"
-	passe=gets.chomp.to_i
-	system"clear"
-	return pass
+ require "io/console"
+	#Sign up
+	def sign_up
+		puts "Inittialisez et retenez bien votre mot de passe:"
+		print "> "
+		realmdp = STDIN.noecho(&:gets).chomp
+		system "clear"
+		puts "PASSWORD SAVED!\n\n"
+		return realmdp
+	end
+
+	#login
+		def login
+			mdp = ""
+			realmdp = sign_up
+		while mdp != realmdp
+			puts "ENTER YOUR PASSWORD:"
+			print "> "
+			mdp = STDIN.noecho(&:gets).chomp
+			system "clear"
+			puts "PASSWORD DENIED!" if mdp != realmdp
+		end
+		puts "PASSWORD ACCEPTED!\n\n"
+		end
+
+	#welcome_screen
+	def welcome_screen
+		puts "Welcome, you're now allowed to access our informations \n you'll find all informations about the suspect here https://github.com/PlinXXX/Jeudi "
+	end
+	
+	
+def perform
+	login
+	welcome_screen
 end
-
-def login
-	entpass=""
-	passe= singup
-	while entpass != pass
-		puts"mots de passe s_il vous plait"
-		print">"
-		entpass=gets.chomp
-		system"clear"
-		puts "mauvais mots de passe" if entpass != passe	
-	end
-		puts"mots de passe valide"
-	end
-		
-	def welcom_screem
-		puts"message:bienvenue!"
-	end
-
-	def perform
-		login
-		 welcom_screem
-	end
-	perform
+perform
